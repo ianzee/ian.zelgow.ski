@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ian Zelgowski, MBA</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.png">
 <style>
 :root {
   --bg:#09090f; --surface:#12121c; --surface2:#1a1a2e; --border:#252540;
@@ -35,10 +37,10 @@ nav.scrolled{border-bottom-color:var(--border)}
 .hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
 h1{font-size:clamp(3rem,6vw,5.1rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:4px}
 .headline-title{display:block;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:700;letter-spacing:-.01em;margin-top:16px;line-height:1.2}
-.headline-sub{display:block;font-size:clamp(.9rem,1.4vw,1.1rem);color:var(--muted);font-weight:400;margin-top:6px;margin-bottom:18px;line-height:1.5}
+.headline-sub{display:block;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(.9rem,1.4vw,1.1rem);font-weight:700;margin-top:6px;margin-bottom:18px;line-height:1.5}
 .hero-sub{font-size:1.05rem;color:var(--muted);max-width:680px;margin-bottom:28px;line-height:1.75}
 .hero-flags{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
-.hero-flag{font-size:1.3rem;line-height:1}
+.hero-flag-img{width:18px;height:13px;object-fit:cover;border-radius:2px;border:1px solid rgba(255,255,255,.16);box-shadow:0 1px 0 rgba(0,0,0,.25)}
 .hero-flags span{font-size:.84rem;color:var(--muted);letter-spacing:.03em}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn-primary,.btn-secondary{padding:14px 28px;border-radius:10px;font-size:.92rem;text-decoration:none}
@@ -64,6 +66,7 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px}
 .about-text{font-size:1rem;color:var(--muted);line-height:1.85}
 .about-text p{margin-bottom:16px}
+.about-text .about-closer{margin-top:20px;margin-bottom:0;color:#fff;font-weight:700}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .stat-box,.skill-card,.project-card,.timeline-card,.interest-chip,.contact-link{background:var(--surface);border:1px solid var(--border);border-radius:14px}
 .stat-box{padding:20px 22px}
@@ -94,8 +97,11 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .timeline-column{display:grid;gap:16px}
 .timeline-card{padding:20px}
 .timeline-card-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.timeline-logo-wrap{flex-shrink:0;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:10px;overflow:hidden;padding:4px}
+.timeline-logo-wrap{flex-shrink:0;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(255,255,255,.18);border-radius:10px;overflow:hidden;padding:4px}
 .timeline-logo{width:34px;height:34px;object-fit:contain}
+.timeline-logo.logo-iu-health{width:30px;height:30px}
+.timeline-logo.logo-illinois{background:#13294B;border-radius:8px;padding:4px}
+.timeline-logo.logo-penn-state{background:#FFFFFF;border-radius:8px;padding:4px}
 .timeline-card-header .timeline-title{margin-bottom:0}
 .timeline-title{font-size:.98rem;font-weight:700}
 .timeline-meta,.timeline-detail,.timeline-dates{font-size:.85rem;color:var(--muted);line-height:1.65}
@@ -157,8 +163,8 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
       <span class="headline-sub">Healthcare finance leader, automation builder, and systems operator</span>
       <p class="hero-sub">Finance by profession, builder by temperament. I like taking complicated systems — budgets, operations, infrastructure, automation, even family finances — and making them understandable, reliable, and actually useful.</p>
       <div class="hero-flags">
-        <span class="hero-flag" aria-hidden="true">🇺🇸</span>
-        <span class="hero-flag" aria-hidden="true">🇵🇱</span>
+        <img src="assets/flag-us.svg" class="hero-flag-img" alt="United States flag">
+        <img src="assets/flag-pl.svg" class="hero-flag-img" alt="Poland flag">
         <span>Dual citizen &middot; American &amp; Polish</span>
       </div>
       <div class="hero-actions">
@@ -182,24 +188,16 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
   <div class="fade-in">
     <div class="section-label">// About</div>
     <h2>Who I am</h2>
-    <p class="section-sub">The short version: I like useful systems, honest data, and tools that pull their own weight.</p>
     <div class="about-grid">
-      <div class="about-text"><p>I&#x27;m a finance operator with a builder&#x27;s brain. My day job lives in budgeting, forecasting, and financial analysis, but I get most energized when I can turn messy systems into something clearer, faster, and more useful.</p><p>Most of my professional work has lived in healthcare, banking, and government — environments where details matter, process matters, and bad assumptions get expensive fast. That tends to make you practical, analytical, and pretty hard to impress with buzzwords.</p><p>Outside of work, I build the tools I wish already existed: financial dashboards, automation workflows, homelab infrastructure, smart-home systems, and scripts that solve annoyingly specific problems well enough to become permanent fixtures.</p><p>I&#x27;m based in the Indianapolis area, and when I&#x27;m not buried in data or infrastructure, I&#x27;m usually tinkering with hardware, self-hosted services, or some new AI workflow that seemed like a good idea at the time.</p></div>
+      <div class="about-text"><p>I&#x27;m a finance operator with a builder&#x27;s brain. My day job lives in budgeting, forecasting, and financial analysis, but I get most energized when I can turn messy systems into something clearer, faster, and more useful.</p><p>Most of my professional work has lived in healthcare, banking, and government — environments where details matter, process matters, and bad assumptions get expensive fast. That tends to make you practical, analytical, and pretty hard to impress with buzzwords.</p><p>Outside of work, I build the tools I wish already existed: financial dashboards, automation workflows, homelab infrastructure, smart-home systems, and scripts that solve annoyingly specific problems well enough to become permanent fixtures.</p><p>I&#x27;m based in the Indianapolis area, and when I&#x27;m not buried in data or infrastructure, I&#x27;m usually tinkering with hardware, self-hosted services, or some new AI workflow that seemed like a good idea at the time.</p><p class="about-closer"><strong>The short version: I like useful systems, honest data, and tools that pull their own weight.</strong></p></div>
       <div class="about-stats">
         <div class="stat-box">
           <div class="stat-num">4</div>
           <div class="stat-label">Career chapters across banking, healthcare, and government</div>
         </div>
         <div class="stat-box stat-edu">
-          <div class="stat-edu-label">Education</div>
-          <div class="stat-edu-row">
-            <div class="stat-edu-degree">Undergrad &middot; B.S. Marketing</div>
-            <div class="stat-edu-school">Penn State University</div>
-          </div>
-          <div class="stat-edu-row">
-            <div class="stat-edu-degree">MBA</div>
-            <div class="stat-edu-school">Gies College of Business, Illinois</div>
-          </div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">Degrees: an MBA from the University of Illinois at Urbana-Champaign and a Bachelor's in Marketing from Penn State University</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">60+</div>
@@ -304,25 +302,25 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
         <h3>Experience</h3>
         
       <div class="timeline-card">
-        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-iu-health.svg" class="timeline-logo" alt="Indiana University Health"></div><div class="timeline-title">Indiana University Health</div></div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-iu-health.svg" class="timeline-logo logo-iu-health" alt="Indiana University Health"></div><div class="timeline-title">Indiana University Health</div></div>
         <div class="timeline-meta">Lead Senior Financial Analyst</div>
         <div class="timeline-dates">2024–Present</div>
         <div class="timeline-detail">Leads budgeting, forecasting, and financial planning work in revenue cycle operations, translating complex financial data into decisions leadership can actually use.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-noblesville.png" class="timeline-logo" alt="City of Noblesville"></div><div class="timeline-title">City of Noblesville</div></div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-noblesville.png" class="timeline-logo logo-noblesville" alt="City of Noblesville"></div><div class="timeline-title">City of Noblesville</div></div>
         <div class="timeline-meta">Deputy Financial Officer / Budget &amp; Financial Analyst</div>
         <div class="timeline-dates">2022–2024</div>
         <div class="timeline-detail">Directed municipal budget planning and compliance across 24 departments, strengthening financial discipline, transparency, and executive reporting for a $116M annual budget.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-iu-health.svg" class="timeline-logo" alt="Indiana University Health"></div><div class="timeline-title">Indiana University Health</div></div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-iu-health.svg" class="timeline-logo logo-iu-health" alt="Indiana University Health"></div><div class="timeline-title">Indiana University Health</div></div>
         <div class="timeline-meta">Business Analyst → Senior Business Analyst</div>
         <div class="timeline-dates">2017–2022</div>
         <div class="timeline-detail">Improved revenue cycle performance through audit, process improvement, and revenue-protection work, identifying savings opportunities and helping reduce operational risk.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-busey.png" class="timeline-logo" alt="Busey"></div><div class="timeline-title">Busey</div></div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-busey.png" class="timeline-logo logo-busey" alt="Busey"></div><div class="timeline-title">Busey</div></div>
         <div class="timeline-meta">Treasury Operations Cash Management Specialist → Risk Management Analyst</div>
         <div class="timeline-dates">2013–2017</div>
         <div class="timeline-detail">Built early depth in treasury operations, commercial banking, and enterprise risk management, with a strong foundation in controls, reporting, and regulated financial environments.</div>
@@ -332,12 +330,12 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
         <h3>Education</h3>
         
       <div class="timeline-card">
-        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-illinois.png" class="timeline-logo" alt="Gies College of Business — University of Illinois"></div><div class="timeline-title">Gies College of Business — University of Illinois</div></div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-illinois.png" class="timeline-logo logo-illinois" alt="Gies College of Business — University of Illinois"></div><div class="timeline-title">Gies College of Business — University of Illinois</div></div>
         <div class="timeline-meta">MBA</div>
         <div class="timeline-detail">Graduate business education at one of the top-ranked public business schools in the country.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-penn-state.png" class="timeline-logo" alt="Penn State University"></div><div class="timeline-title">Penn State University</div></div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-penn-state.png" class="timeline-logo logo-penn-state" alt="Penn State University"></div><div class="timeline-title">Penn State University</div></div>
         <div class="timeline-meta">B.S. in Marketing</div>
         <div class="timeline-detail">Top-tier public research university with one of the largest alumni networks in the country.</div>
       </div>
