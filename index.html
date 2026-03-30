@@ -8,45 +8,132 @@
 :root {
   --bg:#09090f; --surface:#12121c; --surface2:#1a1a2e; --border:#252540;
   --text:#e2e2f0; --muted:#9b9bc0; --accent:#818cf8; --accent2:#c084fc;
-  --green:#4ade80; --yellow:#fbbf24; --gradient:linear-gradient(135deg,#818cf8,#c084fc);
+  --green:#4ade80; --yellow:#fbbf24;
+  --gradient:linear-gradient(135deg,#818cf8,#c084fc);
 }
-*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(9,9,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
-nav.scrolled{border-bottom-color:var(--border)} .nav-logo{font-size:1.05rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:28px;list-style:none} .nav-links a,.nav-cta{text-decoration:none} .nav-links a{color:var(--muted);font-size:.88rem} .nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 18px;border-radius:8px;font-size:.88rem} .nav-cta:hover{border-color:var(--accent);color:var(--accent)}
+nav.scrolled{border-bottom-color:var(--border)}
+.nav-logo{font-size:1.05rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a,.nav-cta{text-decoration:none}
+.nav-links a{color:var(--muted);font-size:.88rem}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 18px;border-radius:8px;font-size:.88rem}
+.nav-cta:hover{border-color:var(--accent);color:var(--accent)}
+
+/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 60% at 70% 40%,rgba(129,140,248,.08) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 20% 70%,rgba(192,132,252,.05) 0%,transparent 60%)}
-.hero-grid{position:absolute;inset:0;z-index:0;opacity:.03;background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px}
+.hero-grid{position:absolute;inset:0;z-index:0;opacity:.03;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px}
 .hero-wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.4fr .8fr;gap:48px;align-items:center;max-width:1200px;width:100%;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(129,140,248,.1);border:1px solid rgba(129,140,248,.25);color:var(--accent);font-size:.8rem;padding:6px 14px;border-radius:20px;margin-bottom:28px;letter-spacing:.04em}
 .hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent)}
-h1{font-size:clamp(3rem,6vw,5.1rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:18px} .tagline{display:block;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(1.15rem,2vw,1.65rem);margin-top:12px}
+h1{font-size:clamp(3rem,6vw,5.1rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:4px}
+.headline-title{display:block;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:700;letter-spacing:-.01em;margin-top:16px;line-height:1.2}
+.headline-sub{display:block;font-size:clamp(.9rem,1.4vw,1.1rem);color:var(--muted);font-weight:400;margin-top:6px;margin-bottom:18px;line-height:1.5}
 .hero-sub{font-size:1.05rem;color:var(--muted);max-width:680px;margin-bottom:28px;line-height:1.75}
-.hero-flags{display:flex;align-items:center;gap:8px;margin-bottom:36px;font-size:1.3rem} .hero-flags span{font-size:.82rem;color:var(--muted);margin-left:4px;letter-spacing:.03em}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap} .btn-primary,.btn-secondary{padding:14px 28px;border-radius:10px;font-size:.92rem;text-decoration:none}
-.btn-primary{background:var(--gradient);color:#fff} .btn-secondary{border:1px solid var(--border);color:var(--text)} .btn-secondary:hover{border-color:var(--accent)}
+.hero-flags{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.hero-flag{font-size:1.3rem;line-height:1}
+.hero-flags span{font-size:.84rem;color:var(--muted);letter-spacing:.03em}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary,.btn-secondary{padding:14px 28px;border-radius:10px;font-size:.92rem;text-decoration:none}
+.btn-primary{background:var(--gradient);color:#fff}
+.btn-secondary{border:1px solid var(--border);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent)}
 .hero-photo-card{background:linear-gradient(180deg,rgba(18,18,28,.96),rgba(26,26,46,.9));border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:0 25px 80px rgba(0,0,0,.25)}
 .hero-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:1px solid var(--border);background:#111}
 .hero-photo-fallback{width:100%;aspect-ratio:1/1;border-radius:18px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:4rem;background:radial-gradient(circle at 30% 20%,rgba(129,140,248,.18),transparent 45%),#111}
-.hero-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px} .mini{background:rgba(255,255,255,.02);border:1px solid var(--border);padding:14px;border-radius:14px} .mini-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em} .mini-value{font-size:.95rem;font-weight:650;margin-top:6px}
-section{padding:96px 48px;max-width:1200px;margin:0 auto} .section-label{display:inline-block;color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px} h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:750;letter-spacing:-.025em;margin-bottom:16px} .section-sub{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:40px;line-height:1.7} hr.divider{border:none;border-top:1px solid var(--border);margin:0}
-.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px} .about-text{font-size:1rem;color:var(--muted);line-height:1.85} .about-text p{margin-bottom:16px}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px} .stat-box,.skill-card,.project-card,.timeline-card,.interest-chip,.contact-link{background:var(--surface);border:1px solid var(--border);border-radius:14px}
-.stat-box{padding:20px 22px} .stat-num{font-size:1.95rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent} .stat-label{font-size:.8rem;color:var(--muted);margin-top:4px}
-.skills-grid,.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px} .skill-card,.project-card{padding:24px} .skill-title,.project-name,.timeline-title{font-size:.98rem;font-weight:700;margin-bottom:8px} .skill-desc,.project-desc,.timeline-meta,.timeline-detail,.timeline-dates{font-size:.85rem;color:var(--muted);line-height:1.65} .timeline-dates{font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-top:8px} .timeline-detail{margin-top:10px}
-.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px} .tag{background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.18);color:var(--accent);font-size:.73rem;padding:4px 10px;border-radius:20px}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px} .project-badge{font-size:.7rem;padding:3px 10px;border-radius:20px;font-weight:600;background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.2)} .project-badge.wip{background:rgba(251,191,36,.1);color:var(--yellow);border-color:rgba(251,191,36,.2)}
-.timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px} .timeline-column{display:grid;gap:16px} .timeline-card{padding:20px}
-.interests-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px} .interest-chip{padding:18px 20px;display:flex;align-items:center;gap:12px} .ic-icon{font-size:1.4rem} .ic-label{font-size:.88rem;font-weight:500}
-.contact-wrap{display:flex;flex-direction:column;align-items:center;text-align:center} .contact-links{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:center} .contact-link{display:flex;align-items:center;gap:10px;padding:14px 22px;color:var(--muted);text-decoration:none} .contact-link:hover{border-color:var(--accent);color:var(--text)}
-footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem} .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease} .fade-in.visible{opacity:1;transform:none}
-@media (max-width:900px){.hero-wrap,.about-grid,.timeline-grid{grid-template-columns:1fr} .hero-photo-card{max-width:420px}}
-@media (max-width:768px){nav{padding:16px 24px} .nav-links{display:none} .hero,section{padding-left:24px;padding-right:24px} footer{flex-direction:column;gap:8px;text-align:center}}
+.hero-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.mini{background:rgba(255,255,255,.02);border:1px solid var(--border);padding:14px;border-radius:14px}
+.mini-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.mini-value{font-size:.95rem;font-weight:650;margin-top:6px}
+
+/* SECTIONS */
+section{padding:96px 48px;max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;color:var(--accent);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:750;letter-spacing:-.025em;margin-bottom:16px}
+.section-sub{color:var(--muted);font-size:1rem;max-width:720px;margin-bottom:40px;line-height:1.7}
+hr.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px}
+.about-text{font-size:1rem;color:var(--muted);line-height:1.85}
+.about-text p{margin-bottom:16px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-box,.skill-card,.project-card,.timeline-card,.interest-chip,.contact-link{background:var(--surface);border:1px solid var(--border);border-radius:14px}
+.stat-box{padding:20px 22px}
+.stat-num{font-size:1.95rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:4px}
+.stat-edu{padding:18px 20px}
+.stat-edu-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.stat-edu-row{margin-bottom:10px}
+.stat-edu-row:last-child{margin-bottom:0}
+.stat-edu-degree{font-size:.9rem;font-weight:650;color:var(--text)}
+.stat-edu-school{font-size:.76rem;color:var(--muted);margin-top:2px}
+
+/* SKILLS */
+.skills-grid,.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.skill-card,.project-card{padding:24px}
+.skill-title,.project-name{font-size:.98rem;font-weight:700;margin-bottom:8px}
+.skill-desc,.project-desc{font-size:.85rem;color:var(--muted);line-height:1.65}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.18);color:var(--accent);font-size:.73rem;padding:4px 10px;border-radius:20px}
+
+/* PROJECTS */
+.project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.project-badge{font-size:.7rem;padding:3px 10px;border-radius:20px;font-weight:600;background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.2)}
+.project-badge.wip{background:rgba(251,191,36,.1);color:var(--yellow);border-color:rgba(251,191,36,.2)}
+
+/* TIMELINE (experience + education) */
+.timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.timeline-column{display:grid;gap:16px}
+.timeline-card{padding:20px}
+.timeline-card-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.timeline-logo-wrap{flex-shrink:0;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:10px;overflow:hidden;padding:4px}
+.timeline-logo{width:34px;height:34px;object-fit:contain}
+.timeline-card-header .timeline-title{margin-bottom:0}
+.timeline-title{font-size:.98rem;font-weight:700}
+.timeline-meta,.timeline-detail,.timeline-dates{font-size:.85rem;color:var(--muted);line-height:1.65}
+.timeline-dates{font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-top:6px}
+.timeline-detail{margin-top:8px}
+
+/* INTERESTS */
+.interests-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.interest-chip{padding:18px 20px;display:flex;align-items:center;gap:12px}
+.ic-icon{font-size:1.4rem}
+.ic-label{font-size:.88rem;font-weight:500}
+
+/* CONTACT */
+.contact-wrap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.contact-links{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+.contact-link{display:flex;align-items:center;gap:10px;padding:14px 22px;color:var(--muted);text-decoration:none}
+.contact-link:hover{border-color:var(--accent);color:var(--text)}
+
+/* FOOTER + ANIMATIONS */
+footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero-wrap,.about-grid,.timeline-grid{grid-template-columns:1fr}
+  .hero-photo-card{max-width:420px}
+}
+@media (max-width:768px) {
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .hero,section{padding-left:24px;padding-right:24px}
+  footer{flex-direction:column;gap:8px;text-align:center}
+}
 </style>
 </head>
 <body>
+
 <nav id="nav">
   <div class="nav-logo">Ian Zelgowski</div>
   <ul class="nav-links">
@@ -58,15 +145,22 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
   </ul>
   <a href="#contact" class="nav-cta">Get in touch</a>
 </nav>
+
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-wrap">
     <div class="hero-content">
-      <div class="hero-badge">Indianapolis, Indiana</div>
-      <h1>Ian Zelgowski, MBA<span class="tagline">Lead Senior Financial Analyst · Healthcare finance leader, automation builder, and systems operator</span></h1>
+      <div class="hero-badge">Indianapolis, IN</div>
+      <h1>Ian Zelgowski, MBA</h1>
+      <span class="headline-title">Lead Senior Financial Analyst</span>
+      <span class="headline-sub">Healthcare finance leader, automation builder, and systems operator</span>
       <p class="hero-sub">Finance by profession, builder by temperament. I like taking complicated systems — budgets, operations, infrastructure, automation, even family finances — and making them understandable, reliable, and actually useful.</p>
-      <div class="hero-flags">🇺🇸 🇵🇱 <span>Dual citizen · American & Polish</span></div>
+      <div class="hero-flags">
+        <span class="hero-flag" aria-hidden="true">🇺🇸</span>
+        <span class="hero-flag" aria-hidden="true">🇵🇱</span>
+        <span>Dual citizen &middot; American &amp; Polish</span>
+      </div>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">See what I've built</a>
         <a href="#experience" class="btn-secondary">Career highlights</a>
@@ -76,62 +170,231 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
       <img src="assets/ian-linkedin-photo.png" alt="Ian Zelgowski" class="hero-photo">
       <div class="hero-mini">
         <div class="mini"><div class="mini-label">Current Focus</div><div class="mini-value">Healthcare finance + automation</div></div>
-        <div class="mini"><div class="mini-label">Lives In</div><div class="mini-value">Indianapolis, Indiana</div></div>
+        <div class="mini"><div class="mini-label">Lives In</div><div class="mini-value">Indianapolis, IN</div></div>
       </div>
     </div>
   </div>
 </div>
+
 <hr class="divider">
-<section id="about"><div class="fade-in"><div class="section-label">// About</div><h2>Who I am</h2><p class="section-sub">The short version: I like useful systems, honest data, and tools that pull their own weight.</p><div class="about-grid"><div class="about-text"><p>I&#x27;m a finance operator with a builder&#x27;s brain. My day job lives in budgeting, forecasting, and financial analysis, but I get most energized when I can turn messy systems into something clearer, faster, and more useful.</p><p>Most of my professional work has lived in healthcare, banking, and government — environments where details matter, process matters, and bad assumptions get expensive fast. That tends to make you practical, analytical, and pretty hard to impress with buzzwords.</p><p>Outside of work, I build the tools I wish already existed: retirement dashboards, automation workflows, homelab infrastructure, smart-home systems, and scripts that solve annoyingly specific problems well enough to become permanent fixtures.</p><p>I&#x27;m based in the Indianapolis area, and when I&#x27;m not buried in data or infrastructure, I&#x27;m usually tinkering with hardware, self-hosted services, or some new AI workflow that seemed like a good idea at the time.</p></div><div class="about-stats"><div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Career chapters across banking, healthcare, and government</div></div><div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Degrees — Penn State + Illinois MBA</div></div><div class="stat-box"><div class="stat-num">60+</div><div class="stat-label">Docker containers running on the homelab</div></div><div class="stat-box"><div class="stat-num">∞</div><div class="stat-label">Projects created because off-the-shelf tools annoyed me</div></div></div></div></div></section>
+
+<section id="about">
+  <div class="fade-in">
+    <div class="section-label">// About</div>
+    <h2>Who I am</h2>
+    <p class="section-sub">The short version: I like useful systems, honest data, and tools that pull their own weight.</p>
+    <div class="about-grid">
+      <div class="about-text"><p>I&#x27;m a finance operator with a builder&#x27;s brain. My day job lives in budgeting, forecasting, and financial analysis, but I get most energized when I can turn messy systems into something clearer, faster, and more useful.</p><p>Most of my professional work has lived in healthcare, banking, and government — environments where details matter, process matters, and bad assumptions get expensive fast. That tends to make you practical, analytical, and pretty hard to impress with buzzwords.</p><p>Outside of work, I build the tools I wish already existed: financial dashboards, automation workflows, homelab infrastructure, smart-home systems, and scripts that solve annoyingly specific problems well enough to become permanent fixtures.</p><p>I&#x27;m based in the Indianapolis area, and when I&#x27;m not buried in data or infrastructure, I&#x27;m usually tinkering with hardware, self-hosted services, or some new AI workflow that seemed like a good idea at the time.</p></div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Career chapters across banking, healthcare, and government</div>
+        </div>
+        <div class="stat-box stat-edu">
+          <div class="stat-edu-label">Education</div>
+          <div class="stat-edu-row">
+            <div class="stat-edu-degree">Undergrad &middot; B.S. Marketing</div>
+            <div class="stat-edu-school">Penn State University</div>
+          </div>
+          <div class="stat-edu-row">
+            <div class="stat-edu-degree">MBA</div>
+            <div class="stat-edu-school">Gies College of Business, Illinois</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">60+</div>
+          <div class="stat-label">Docker containers running on the homelab</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">&infin;</div>
+          <div class="stat-label">Projects created because off-the-shelf tools annoyed me</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
-<section id="skills"><div class="fade-in"><div class="section-label">// Skills</div><h2>What I do well</h2><p class="section-sub">A mix of financial discipline, operational thinking, and technical curiosity — which is a polite way of saying I automate things when they annoy me.</p><div class="skills-grid"><div class="skill-card"><div class="skill-title">Financial Analysis & Budgeting</div><div class="skill-desc">Multi-million dollar budgeting, forecasting, reporting, and turning executive-level ambiguity into something measurable and actionable.</div><div class="skill-tags"><span class="tag">Financial Analysis</span><span class="tag">Budgeting</span><span class="tag">Healthcare Finance</span><span class="tag">Business Intelligence</span></div></div><div class="skill-card"><div class="skill-title">Healthcare Finance</div><div class="skill-desc">Revenue cycle analysis, financial operations, audit-minded thinking, and process improvement inside highly regulated environments.</div><div class="skill-tags"><span class="tag">Revenue Cycle</span><span class="tag">Forecasting</span><span class="tag">Compliance</span><span class="tag">BI</span></div></div><div class="skill-card"><div class="skill-title">Automation & Python</div><div class="skill-desc">I build scripts and dashboards that earn their keep: financial modeling, data extraction, task automation, and tools that quietly remove repetitive work.</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">APIs</span><span class="tag">Automation</span></div></div><div class="skill-card"><div class="skill-title">Homelab & Self-Hosting</div><div class="skill-desc">Unraid, Docker, networking, service orchestration, and the general principle that if a service matters, I'd rather own the stack.</div><div class="skill-tags"><span class="tag">Unraid</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Tailscale</span></div></div><div class="skill-card"><div class="skill-title">Smart Home Systems</div><div class="skill-desc">Home Assistant, ESPHome, Zigbee, energy monitoring, and practical household automation that solves real problems instead of showing off.</div><div class="skill-tags"><span class="tag">Home Assistant</span><span class="tag">ESPHome</span><span class="tag">Zigbee</span><span class="tag">Energy Data</span></div></div><div class="skill-card"><div class="skill-title">AI & Agentic Tools</div><div class="skill-desc">Hands-on work with OpenClaw, persistent AI memory, model routing, automation workflows, and turning LLMs into tools instead of toys.</div><div class="skill-tags"><span class="tag">OpenClaw</span><span class="tag">LLMs</span><span class="tag">Agents</span><span class="tag">Prompting</span></div></div></div></div></section>
+
+<section id="skills">
+  <div class="fade-in">
+    <div class="section-label">// Skills</div>
+    <h2>What I do well</h2>
+    <p class="section-sub">A mix of financial discipline, operational thinking, and technical curiosity — which is a polite way of saying I automate things when they annoy me.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-title">Financial Analysis &amp; Budgeting</div>
+        <div class="skill-desc">Multi-million dollar budgeting, forecasting, reporting, and turning executive-level ambiguity into something measurable and actionable.</div>
+        <div class="skill-tags"><span class="tag">Financial Analysis</span><span class="tag">Budgeting</span><span class="tag">Healthcare Finance</span><span class="tag">Business Intelligence</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Healthcare Finance</div>
+        <div class="skill-desc">Revenue cycle analysis, financial operations, audit-minded thinking, and process improvement inside highly regulated environments.</div>
+        <div class="skill-tags"><span class="tag">Revenue Cycle</span><span class="tag">Forecasting</span><span class="tag">Compliance</span><span class="tag">Business Intelligence</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Automation &amp; Python</div>
+        <div class="skill-desc">I build scripts and dashboards that earn their keep: financial modeling, data extraction, task automation, and tools that quietly remove repetitive work.</div>
+        <div class="skill-tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">APIs</span><span class="tag">Automation</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Homelab &amp; Self-Hosting</div>
+        <div class="skill-desc">Unraid, Docker, networking, service orchestration, and the general principle that if a service matters, I'd rather own the stack.</div>
+        <div class="skill-tags"><span class="tag">Unraid</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Tailscale</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">Smart Home Systems</div>
+        <div class="skill-desc">Home Assistant, ESPHome, Zigbee, energy monitoring, and practical household automation that solves real problems instead of showing off.</div>
+        <div class="skill-tags"><span class="tag">Home Assistant</span><span class="tag">ESPHome</span><span class="tag">Zigbee</span><span class="tag">Energy Data</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-title">AI &amp; Agentic Tools</div>
+        <div class="skill-desc">Hands-on work with OpenClaw, persistent AI memory, model routing, automation workflows, and turning LLMs into tools instead of toys.</div>
+        <div class="skill-tags"><span class="tag">OpenClaw</span><span class="tag">LLMs</span><span class="tag">Agents</span><span class="tag">Prompting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
-<section id="projects"><div class="fade-in"><div class="section-label">// Projects</div><h2>Things I've built</h2><p class="section-sub">Mostly personal tools, infrastructure, and experiments that started with: there has to be a better way to do this.</p><div class="projects-grid"><div class="project-card"><div class="project-header"><div class="project-name">Retirement Dashboard</div><div class="project-badge">Live</div></div><div class="project-desc">Custom Flask dashboard pulling live Monarch data with Monte Carlo success rates, scenario save/load, phased spending, and one-time expense planning. More useful than generic retirement calculators because it actually knows the portfolio.</div></div><div class="project-card"><div class="project-header"><div class="project-name">OpenClaw AI Stack</div><div class="project-badge">Live</div></div><div class="project-desc">Persistent AI assistant with memory, heartbeats, cron jobs, model fallback chains, Discord delivery, and custom tools. Equal parts assistant, lab rat, and force multiplier.</div></div><div class="project-card"><div class="project-header"><div class="project-name">TARDIS Homelab</div><div class="project-badge">Live</div></div><div class="project-desc">Unraid host running 60+ containers for media, security, development, smart-home integrations, and internal tooling. If it can live on my hardware, I usually make it.</div></div><div class="project-card"><div class="project-header"><div class="project-name">Smart Home Energy Monitoring</div><div class="project-badge">Live</div></div><div class="project-desc">Real-time utility monitoring with AMR2MQTT, Home Assistant dashboards, gas/electric cost visibility, and energy-aware automation.</div></div><div class="project-card"><div class="project-header"><div class="project-name">Profile-to-Website Pipeline</div><div class="project-badge">Live</div></div><div class="project-desc">A reusable workflow that turns professional profile data, photos, and curated copy into a polished static site without rebuilding the whole thing by hand every time.</div></div><div class="project-card"><div class="project-header"><div class="project-name">Retro Hardware Restoration</div><div class="project-badge wip">Ongoing</div></div><div class="project-desc">Old consoles, neglected electronics, and the kind of restoration work that rewards patience, parts bins, and stubbornness.</div></div></div></div></section>
+
+<section id="projects">
+  <div class="fade-in">
+    <div class="section-label">// Projects</div>
+    <h2>Things I've built</h2>
+    <p class="section-sub">Mostly personal tools, infrastructure, and experiments that started with: there has to be a better way to do this.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header"><div class="project-name">Personal Finance Dashboard</div><div class="project-badge">Live</div></div>
+        <div class="project-desc">Custom Flask dashboard pulling live Monarch data with Monte Carlo success rates, scenario save/load, phased spending, and one-time expense planning. More useful than generic calculators because it actually knows the portfolio.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><div class="project-name">OpenClaw AI Stack</div><div class="project-badge">Live</div></div>
+        <div class="project-desc">Persistent AI assistant with memory, heartbeats, cron jobs, model fallback chains, Discord delivery, and custom tools. Equal parts assistant, lab rat, and force multiplier.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><div class="project-name">Unraid Homelab</div><div class="project-badge">Live</div></div>
+        <div class="project-desc">Host running 60+ containers for media, security, development, smart-home integrations, and internal tooling. If it can live on my hardware, I usually make it.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><div class="project-name">Smart Home Energy Monitoring</div><div class="project-badge">Live</div></div>
+        <div class="project-desc">Real-time utility monitoring with AMR2MQTT, Home Assistant dashboards, gas/electric cost visibility, and energy-aware automation.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><div class="project-name">Profile-to-Website Pipeline</div><div class="project-badge">Live</div></div>
+        <div class="project-desc">A reusable workflow that turns professional profile data, photos, and curated copy into a polished static site without rebuilding the whole thing by hand every time.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><div class="project-name">Retro Hardware Restoration</div><div class="project-badge wip">Ongoing</div></div>
+        <div class="project-desc">Old consoles, neglected electronics, and the kind of restoration work that rewards patience, parts bins, and stubbornness.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
-<section id="experience"><div class="fade-in"><div class="section-label">// Experience</div><h2>Career highlights</h2><p class="section-sub">The professional through-line: finance, analysis, operations, and making complicated things behave.</p><div class="timeline-grid"><div class="timeline-column"><h3>Experience</h3>
+
+<section id="experience">
+  <div class="fade-in">
+    <div class="section-label">// Experience</div>
+    <h2>Career highlights</h2>
+    <p class="section-sub">The professional through-line: finance, analysis, operations, and making complicated things behave.</p>
+    <div class="timeline-grid">
+      <div class="timeline-column">
+        <h3>Experience</h3>
+        
       <div class="timeline-card">
-        <div class="timeline-title">Indiana University Health</div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-iu-health.svg" class="timeline-logo" alt="Indiana University Health"></div><div class="timeline-title">Indiana University Health</div></div>
         <div class="timeline-meta">Lead Senior Financial Analyst</div>
         <div class="timeline-dates">2024–Present</div>
         <div class="timeline-detail">Leads budgeting, forecasting, and financial planning work in revenue cycle operations, translating complex financial data into decisions leadership can actually use.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-title">City of Noblesville</div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-noblesville.png" class="timeline-logo" alt="City of Noblesville"></div><div class="timeline-title">City of Noblesville</div></div>
         <div class="timeline-meta">Deputy Financial Officer / Budget &amp; Financial Analyst</div>
         <div class="timeline-dates">2022–2024</div>
         <div class="timeline-detail">Directed municipal budget planning and compliance across 24 departments, strengthening financial discipline, transparency, and executive reporting for a $116M annual budget.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-title">Indiana University Health</div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-iu-health.svg" class="timeline-logo" alt="Indiana University Health"></div><div class="timeline-title">Indiana University Health</div></div>
         <div class="timeline-meta">Business Analyst → Senior Business Analyst</div>
         <div class="timeline-dates">2017–2022</div>
         <div class="timeline-detail">Improved revenue cycle performance through audit, process improvement, and revenue-protection work, identifying savings opportunities and helping reduce operational risk.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-title">Busey</div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-busey.png" class="timeline-logo" alt="Busey"></div><div class="timeline-title">Busey</div></div>
         <div class="timeline-meta">Treasury Operations Cash Management Specialist → Risk Management Analyst</div>
         <div class="timeline-dates">2013–2017</div>
         <div class="timeline-detail">Built early depth in treasury operations, commercial banking, and enterprise risk management, with a strong foundation in controls, reporting, and regulated financial environments.</div>
-      </div></div><div class="timeline-column"><h3>Education</h3>
+      </div>
+      </div>
+      <div class="timeline-column">
+        <h3>Education</h3>
+        
       <div class="timeline-card">
-        <div class="timeline-title">Gies College of Business — University of Illinois Urbana-Champaign</div>
-        <div class="timeline-meta">Professional MBA</div>
-        <div class="timeline-detail">Graduate business study at Illinois; the Professional MBA program was later retired as the school shifted focus to the iMBA.</div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-illinois.png" class="timeline-logo" alt="Gies College of Business — University of Illinois"></div><div class="timeline-title">Gies College of Business — University of Illinois</div></div>
+        <div class="timeline-meta">MBA</div>
+        <div class="timeline-detail">Graduate business education at one of the top-ranked public business schools in the country.</div>
       </div>
       <div class="timeline-card">
-        <div class="timeline-title">Penn State University</div>
+        <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-penn-state.png" class="timeline-logo" alt="Penn State University"></div><div class="timeline-title">Penn State University</div></div>
         <div class="timeline-meta">B.S. in Marketing</div>
         <div class="timeline-detail">Top-tier public research university with one of the largest alumni networks in the country.</div>
-      </div></div></div></div></section>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
-<section id="interests"><div class="fade-in"><div class="section-label">// Interests</div><h2>What I care about</h2><p class="section-sub">The overlap of finance, technology, self-reliance, and hobbies that probably got a little more serious than they needed to.</p><div class="interests-row"><div class="interest-chip"><div class="ic-icon">📊</div><div class="ic-label">Finance & Investing</div></div><div class="interest-chip"><div class="ic-icon">🏥</div><div class="ic-label">Healthcare Operations</div></div><div class="interest-chip"><div class="ic-icon">🏠</div><div class="ic-label">Home Automation</div></div><div class="interest-chip"><div class="ic-icon">🖥️</div><div class="ic-label">Homelabbing</div></div><div class="interest-chip"><div class="ic-icon">🤖</div><div class="ic-label">AI & Agentic Systems</div></div><div class="interest-chip"><div class="ic-icon">🛠️</div><div class="ic-label">Tinkering</div></div><div class="interest-chip"><div class="ic-icon">🔧</div><div class="ic-label">Hardware Restoration</div></div><div class="interest-chip"><div class="ic-icon">🇵🇱</div><div class="ic-label">Polish Heritage</div></div><div class="interest-chip"><div class="ic-icon">👨‍👩‍👧‍👦</div><div class="ic-label">Family</div></div><div class="interest-chip"><div class="ic-icon">📈</div><div class="ic-label">Building Better Tools</div></div></div></div></section>
+
+<section id="interests">
+  <div class="fade-in">
+    <div class="section-label">// Interests</div>
+    <h2>What I care about</h2>
+    <p class="section-sub">The overlap of finance, technology, self-reliance, and hobbies that probably got a little more serious than they needed to.</p>
+    <div class="interests-row">
+      <div class="interest-chip"><div class="ic-icon">📊</div><div class="ic-label">Finance &amp; Investing</div></div>
+      <div class="interest-chip"><div class="ic-icon">🏥</div><div class="ic-label">Healthcare Operations</div></div>
+      <div class="interest-chip"><div class="ic-icon">🏠</div><div class="ic-label">Home Automation</div></div>
+      <div class="interest-chip"><div class="ic-icon">🖥️</div><div class="ic-label">Homelabbing</div></div>
+      <div class="interest-chip"><div class="ic-icon">🤖</div><div class="ic-label">AI &amp; Agentic Systems</div></div>
+      <div class="interest-chip"><div class="ic-icon">🛠️</div><div class="ic-label">Tinkering</div></div>
+      <div class="interest-chip"><div class="ic-icon">🔧</div><div class="ic-label">Hardware Restoration</div></div>
+      <div class="interest-chip"><div class="ic-icon">🇵🇱</div><div class="ic-label">Polish Heritage</div></div>
+      <div class="interest-chip"><div class="ic-icon">👨‍👩‍👧‍👦</div><div class="ic-label">Family</div></div>
+      <div class="interest-chip"><div class="ic-icon">📈</div><div class="ic-label">Building Better Tools</div></div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
-<section id="contact"><div class="fade-in contact-wrap"><div class="section-label">// Contact</div><h2>Let's connect</h2><p class="section-sub" style="margin:0 auto 0;">Best place for the professional version is LinkedIn. Best place for the direct version is email.</p><div class="contact-links"><a href="https://www.linkedin.com/in/ianzelgowski/" class="contact-link" target="_blank"><span>💼</span><span>LinkedIn</span></a><a href="mailto:izelgowski@gmail.com" class="contact-link"><span>✉️</span><span>Email</span></a></div></div></section>
-<footer><span>© 2026 Ian Zelgowski · Indianapolis, IN</span><span>Built without a framework. Maintained with mild obsession.</span></footer>
+
+<section id="contact">
+  <div class="fade-in contact-wrap">
+    <div class="section-label">// Contact</div>
+    <h2>Let's connect</h2>
+    <p class="section-sub" style="margin:0 auto;">Best place for the professional version is LinkedIn. Best place for the direct version is email.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/ianzelgowski/" class="contact-link" target="_blank"><span>💼</span><span>LinkedIn</span></a>
+      <a href="mailto:izelgowski@gmail.com" class="contact-link"><span>✉️</span><span>Email</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Ian Zelgowski &middot; Indianapolis, IN</span>
+  <span>Built without a framework. Maintained with mild obsession.</span>
+</footer>
+
 <script>
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
-const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+const io = new IntersectionObserver(entries => {
+  entries.forEach(ent => {
+    if (ent.isIntersecting) { ent.target.classList.add('visible'); io.unobserve(ent.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </script>
 </body>
