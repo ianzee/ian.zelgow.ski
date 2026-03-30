@@ -86,6 +86,17 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .tag{background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.18);color:var(--accent);font-size:.73rem;padding:4px 10px;border-radius:20px}
 
+/* CREDENTIALS */
+.credentials-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.credentials-column{display:grid;gap:16px}
+.credentials-stack{display:grid;gap:12px}
+.credential-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.credential-card.compact{padding:16px 18px}
+.credential-title{font-size:.95rem;font-weight:700;color:var(--text)}
+.credential-meta{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:6px}
+.credentials-subsection{display:grid;gap:12px}
+.credentials-subsection h3{font-size:1rem;font-weight:700}
+
 /* PROJECTS */
 .project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
 .project-badge{font-size:.7rem;padding:3px 10px;border-radius:20px;font-weight:600;background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.2)}
@@ -126,15 +137,39 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
 
 /* RESPONSIVE */
 @media (max-width:900px) {
-  .hero-wrap,.about-grid,.timeline-grid{grid-template-columns:1fr}
-  .hero-photo-card{max-width:420px}
+  .hero-wrap,.about-grid,.timeline-grid,.credentials-grid{grid-template-columns:1fr}
+  .hero-photo-card{max-width:420px;margin:0 auto}
 }
 @media (max-width:768px) {
-  nav{padding:16px 24px}
+  nav{padding:14px 20px}
   .nav-links{display:none}
-  .hero,section{padding-left:24px;padding-right:24px}
-  footer{flex-direction:column;gap:8px;text-align:center}
+  .nav-cta{display:none}
+  .nav-hamburger{display:flex}
+  .hero{padding:80px 20px 56px}
+  section{padding:64px 20px}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:24px 20px}
+  .about-stats{grid-template-columns:1fr}
 }
+@media (max-width:480px) {
+  h1{font-size:2.5rem}
+  .hero-mini{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .btn-primary,.btn-secondary{text-align:center;display:block}
+  .hero-photo-card{padding:16px}
+  .mini{padding:12px}
+}
+
+/* MOBILE NAV HAMBURGER */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile-menu{display:none;position:fixed;top:54px;left:0;right:0;background:rgba(9,9,15,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 20px 20px;z-index:99;flex-direction:column}
+.nav-mobile-menu.open{display:flex}
+.nav-mobile-menu a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:13px 0;border-bottom:1px solid var(--border)}
+.nav-mobile-menu a:last-child{border-bottom:none}
+.nav-mobile-menu a:hover,.nav-mobile-menu a:focus{color:var(--text)}
 </style>
 </head>
 <body>
@@ -146,10 +181,23 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#credentials">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#credentials">Credentials</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" style="color:var(--accent);font-weight:600;margin-top:4px">Get in touch</a>
+</div>
 
 <div class="hero">
   <div class="hero-bg"></div>
@@ -345,6 +393,82 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
 
 <hr class="divider">
 
+<section id="credentials">
+  <div class="fade-in">
+    <div class="section-label">// Credentials</div>
+    <h2>Certifications &amp; affiliations</h2>
+    <p class="section-sub">Professional credentials that actually matter here, plus a few academic and professional affiliations worth keeping on the record.</p>
+    <div class="credentials-grid">
+      <div class="credentials-column">
+        <h3>HFMA Certifications</h3>
+        <div class="credentials-stack">
+          
+      <div class="credential-card">
+        <div class="credential-title">Certified Specialist Accounting and Finance (CSAF)</div>
+        <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Mar 2025 · Expires May 2027</div>
+      </div>
+      <div class="credential-card">
+        <div class="credential-title">Certified Specialist Business Intelligence (CSBI)</div>
+        <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Apr 2022 · Expires May 2027</div>
+      </div>
+      <div class="credential-card">
+        <div class="credential-title">Certified Healthcare Financial Professional (CHFP)</div>
+        <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Aug 2021 · Expired May 2025</div>
+      </div>
+        </div>
+      </div>
+      <div class="credentials-column">
+        <div class="credentials-subsection">
+          <h3>Honors</h3>
+          <div class="credentials-stack">
+            
+      <div class="credential-card compact">
+        <div class="credential-title">MBA Academic Achievement Award</div>
+        <div class="credential-meta">University of Illinois College of Business · May 2017</div>
+      </div>
+      <div class="credential-card compact">
+        <div class="credential-title">Associate Experience Panel Member</div>
+        <div class="credential-meta">Busey Bank Associate Experience (AX) Team · Sep 2016</div>
+      </div>
+      <div class="credential-card compact">
+        <div class="credential-title">Busey Service Academy Graduate</div>
+        <div class="credential-meta">Busey Bank · Jun 2016</div>
+      </div>
+      <div class="credential-card compact">
+        <div class="credential-title">Customer Experience Ambassador</div>
+        <div class="credential-meta">Busey Bank Customer Experience (CX) Team · Jan 2016</div>
+      </div>
+          </div>
+        </div>
+        <div class="credentials-subsection">
+          <h3>Organizations</h3>
+          <div class="credentials-stack">
+            
+      <div class="credential-card compact">
+        <div class="credential-title">Beta Gamma Sigma</div>
+        <div class="credential-meta">Lifetime Member · Mar 2017 - Present</div>
+      </div>
+      <div class="credential-card compact">
+        <div class="credential-title">The Honors Society of Phi Kappa Phi</div>
+        <div class="credential-meta">Active Member · Feb 2016 - Present</div>
+      </div>
+      <div class="credential-card compact">
+        <div class="credential-title">MBA Association, University of Illinois Chapter</div>
+        <div class="credential-meta">Active Member · Jan 2015 - Present</div>
+      </div>
+      <div class="credential-card compact">
+        <div class="credential-title">TEDxUIUC</div>
+        <div class="credential-meta">Director of Finance · Aug 2016 - May 2017</div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <section id="interests">
   <div class="fade-in">
     <div class="section-label">// Interests</div>
@@ -387,6 +511,23 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
 <script>
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
 const io = new IntersectionObserver(entries => {
   entries.forEach(ent => {
     if (ent.isIntersecting) { ent.target.classList.add('visible'); io.unobserve(ent.target); }
