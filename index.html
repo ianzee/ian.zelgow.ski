@@ -92,6 +92,8 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .credentials-stack{display:grid;gap:12px}
 .credential-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
 .credential-card.compact{padding:16px 18px}
+.credential-link{display:block;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.credential-link:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
 .credential-title{font-size:.95rem;font-weight:700;color:var(--text)}
 .credential-meta{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:6px}
 .credentials-subsection{display:grid;gap:12px}
@@ -378,13 +380,15 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
         
       <div class="timeline-card">
         <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-illinois.png" class="timeline-logo logo-illinois" alt="University of Illinois Urbana-Champaign"></div><div class="timeline-title">University of Illinois Urbana-Champaign</div></div>
-        <div class="timeline-meta">MBA</div>
-        <div class="timeline-detail">MBA · 2015–2017</div>
+        <div class="timeline-meta">Master of Business Administration (MBA)</div>
+        <div class="timeline-dates">2015–2017</div>
+        <div class="timeline-detail">Gies College of Business</div>
       </div>
       <div class="timeline-card">
         <div class="timeline-card-header"><div class="timeline-logo-wrap"><img src="assets/logo-penn-state.png" class="timeline-logo logo-penn-state" alt="Penn State University"></div><div class="timeline-title">Penn State University</div></div>
-        <div class="timeline-meta">B.S. in Marketing</div>
-        <div class="timeline-detail">B.S. in Marketing · 2008–2011</div>
+        <div class="timeline-meta">Bachelor of Science in Marketing</div>
+        <div class="timeline-dates">2008–2011</div>
+        <div class="timeline-detail">Smeal College of Business</div>
       </div>
       </div>
     </div>
@@ -396,71 +400,25 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
 <section id="credentials">
   <div class="fade-in">
     <div class="section-label">// Credentials</div>
-    <h2>Certifications &amp; affiliations</h2>
-    <p class="section-sub">Professional credentials that actually matter here, plus a few academic and professional affiliations worth keeping on the record.</p>
+    <h2>Certifications</h2>
+    <p class="section-sub">Professional credentials that actually matter here — current, relevant, and easy to verify.</p>
     <div class="credentials-grid">
       <div class="credentials-column">
-        <h3>HFMA Certifications</h3>
+        <h3>Healthcare Financial Management Association (HFMA) Certifications</h3>
         <div class="credentials-stack">
           
-      <div class="credential-card">
+      <a href="https://www.hfma.org/course/certified-specialist-accounting-and-finance-csaf/" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
         <div class="credential-title">Certified Specialist Accounting and Finance (CSAF)</div>
-        <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Mar 2025 · Expires May 2027</div>
-      </div>
-      <div class="credential-card">
+        <div class="credential-meta">Issued Mar 2025 · Expires May 2027</div>
+      </a>
+      <a href="https://www.hfma.org/course/certified-specialist-business-intelligence-csbi/" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
         <div class="credential-title">Certified Specialist Business Intelligence (CSBI)</div>
-        <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Apr 2022 · Expires May 2027</div>
-      </div>
-      <div class="credential-card">
+        <div class="credential-meta">Issued Apr 2022 · Expires May 2027</div>
+      </a>
+      <a href="https://www.hfma.org/certified-healthcare-financial-professional/" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
         <div class="credential-title">Certified Healthcare Financial Professional (CHFP)</div>
-        <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Aug 2021 · Expired May 2025</div>
-      </div>
-        </div>
-      </div>
-      <div class="credentials-column">
-        <div class="credentials-subsection">
-          <h3>Honors</h3>
-          <div class="credentials-stack">
-            
-      <div class="credential-card compact">
-        <div class="credential-title">MBA Academic Achievement Award</div>
-        <div class="credential-meta">University of Illinois College of Business · May 2017</div>
-      </div>
-      <div class="credential-card compact">
-        <div class="credential-title">Associate Experience Panel Member</div>
-        <div class="credential-meta">Busey Bank Associate Experience (AX) Team · Sep 2016</div>
-      </div>
-      <div class="credential-card compact">
-        <div class="credential-title">Busey Service Academy Graduate</div>
-        <div class="credential-meta">Busey Bank · Jun 2016</div>
-      </div>
-      <div class="credential-card compact">
-        <div class="credential-title">Customer Experience Ambassador</div>
-        <div class="credential-meta">Busey Bank Customer Experience (CX) Team · Jan 2016</div>
-      </div>
-          </div>
-        </div>
-        <div class="credentials-subsection">
-          <h3>Organizations</h3>
-          <div class="credentials-stack">
-            
-      <div class="credential-card compact">
-        <div class="credential-title">Beta Gamma Sigma</div>
-        <div class="credential-meta">Lifetime Member · Mar 2017 - Present</div>
-      </div>
-      <div class="credential-card compact">
-        <div class="credential-title">The Honors Society of Phi Kappa Phi</div>
-        <div class="credential-meta">Active Member · Feb 2016 - Present</div>
-      </div>
-      <div class="credential-card compact">
-        <div class="credential-title">MBA Association, University of Illinois Chapter</div>
-        <div class="credential-meta">Active Member · Jan 2015 - Present</div>
-      </div>
-      <div class="credential-card compact">
-        <div class="credential-title">TEDxUIUC</div>
-        <div class="credential-meta">Director of Finance · Aug 2016 - May 2017</div>
-      </div>
-          </div>
+        <div class="credential-meta">Issued Aug 2021 · Expired May 2025</div>
+      </a>
         </div>
       </div>
     </div>
