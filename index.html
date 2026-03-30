@@ -94,6 +94,10 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .credential-card.compact{padding:16px 18px}
 .credential-link{display:block;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
 .credential-link:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.credential-card-header{display:flex;align-items:center;gap:14px}
+.credential-logo-wrap{flex-shrink:0;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(255,255,255,.18);border-radius:12px;overflow:hidden;padding:4px}
+.credential-logo{width:42px;height:42px;object-fit:contain}
+.credential-body{min-width:0}
 .credential-title{font-size:.95rem;font-weight:700;color:var(--text)}
 .credential-meta{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:6px}
 .credentials-subsection{display:grid;gap:12px}
@@ -395,17 +399,41 @@ footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify
       <div class="credentials-inline">
         <h3>Healthcare Financial Management Association (HFMA) Certifications</h3>
         <div class="credentials-stack">
-          <a href="https://www.hfma.org/course/certified-specialist-accounting-and-finance-csaf/" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
-            <div class="credential-title">Certified Specialist Accounting and Finance (CSAF)</div>
-            <div class="credential-meta">Issued Mar 2025 · Expires May 2027</div>
+          <a href="https://www.credly.com/badges/ed9f98ba-b2c7-4d23-844c-5ded62a185d2/public_url" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
+            <div class="credential-card-header">
+              <div class="credential-logo-wrap"><img src="assets/cert-logos/chfp.png" class="credential-logo" alt="CHFP badge"></div>
+              <div class="credential-body">
+                <div class="credential-title">Certified Healthcare Financial Professional (CHFP)</div>
+                <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Aug 2021 · Expired May 2025</div>
+              </div>
+            </div>
           </a>
-          <a href="https://www.hfma.org/course/certified-specialist-business-intelligence-csbi/" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
-            <div class="credential-title">Certified Specialist Business Intelligence (CSBI)</div>
-            <div class="credential-meta">Issued Apr 2022 · Expires May 2027</div>
+          <a href="https://www.credly.com/badges/a71b20ca-b94d-441a-844c-b8f815ab932d/public_url" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
+            <div class="credential-card-header">
+              <div class="credential-logo-wrap"><img src="assets/cert-logos/csaf.png" class="credential-logo" alt="CSAF badge"></div>
+              <div class="credential-body">
+                <div class="credential-title">Certified Specialist Accounting and Finance (CSAF)</div>
+                <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Mar 2025 · Expires May 2027</div>
+              </div>
+            </div>
           </a>
-          <a href="https://www.hfma.org/certified-healthcare-financial-professional/" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
-            <div class="credential-title">Certified Healthcare Financial Professional (CHFP)</div>
-            <div class="credential-meta">Issued Aug 2021 · Expired May 2025</div>
+          <a href="https://www.credly.com/badges/c4ff0edd-057c-4e4a-a373-c30a575400e0/public_url" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
+            <div class="credential-card-header">
+              <div class="credential-logo-wrap"><img src="assets/cert-logos/crcr.png" class="credential-logo" alt="CRCR badge"></div>
+              <div class="credential-body">
+                <div class="credential-title">Certified Revenue Cycle Representative (CRCR)</div>
+                <div class="credential-meta">Healthcare Financial Management Association (HFMA)</div>
+              </div>
+            </div>
+          </a>
+          <a href="https://www.credly.com/badges/7fc74d2e-b601-4caa-86a0-e61e90fd91c3/public_url" class="credential-card credential-link" target="_blank" rel="noopener noreferrer">
+            <div class="credential-card-header">
+              <div class="credential-logo-wrap"><img src="assets/cert-logos/csbi.png" class="credential-logo" alt="CSBI badge"></div>
+              <div class="credential-body">
+                <div class="credential-title">Certified Specialist Business Intelligence (CSBI)</div>
+                <div class="credential-meta">Healthcare Financial Management Association (HFMA) · Issued Apr 2022 · Expires May 2027</div>
+              </div>
+            </div>
           </a>
         </div>
       </div>
